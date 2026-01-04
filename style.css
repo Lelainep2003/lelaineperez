@@ -10,33 +10,48 @@ a {
   text-decoration: none;
 }
 
-/* NAV BAR */
+/* NAVBAR */
 nav {
   position: sticky;
   top: 0;
-  background-color: #111;
-  padding: 16px 32px;
+  background-color: rgba(17,17,17,0.95); /* dark but slightly transparent */
+  backdrop-filter: blur(6px);             /* subtle blur for readability */
+  padding: 12px 32px;
   z-index: 100;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: center;  /* center items on desktop */
+  align-items: center;
+  flex-wrap: nowrap;        /* don’t wrap on desktop */
+  gap: 24px;                /* spacing between links */
   margin: 0;
   padding: 0;
-  gap: 24px;
+}
+
+.nav-links li {
+  text-align: center;
 }
 
 .nav-links a {
-  color: white;
-  font-weight: 500;
+  display: block;
   padding: 8px 12px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
   text-decoration: underline;
+}
+
+/* PUSH DOWN CONTENT SO NAVBAR DOESN’T COVER */
+body > section:first-of-type {
+  padding-top: 80px; /* adjust if navbar height changes */
 }
 
 /* HERO / HOME */
@@ -171,12 +186,12 @@ nav {
   padding-left: 20px; /* normal bullets */
 }
 
-/*  SECTIONS */
+/* SECTIONS */
 section {
   padding: 64px 32px;
   max-width: 900px;
   margin: auto;
-  text-align: left; /* default left alignment for content */
+  text-align: left; /* default left alignment */
 }
 
 h2 {
@@ -212,8 +227,8 @@ button:hover {
   padding: 64px 32px;
   max-width: 700px;
   margin: auto;
-  text-align: center; /* center all content in contact */
-  background-color: #f9f9f9; /* subtle background to highlight section */
+  text-align: center;
+  background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
@@ -253,66 +268,54 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* NAVBAR */
-nav {
-  position: sticky;
-  top: 0;
-  background-color: rgba(17, 17, 17, 0.95); /* slightly transparent for visibility */
-  backdrop-filter: blur(4px);              /* subtle blur */
-  padding: 12px 32px;
-  z-index: 100;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;      /* prevent wrapping on mobile */
-  margin: 0;
-  padding: 0;
-  gap: 24px;
-}
-
-.nav-links li {
-  flex: 1 1 auto;         /* distribute space evenly */
-  text-align: center;
-  min-width: 0;           /* prevents overflow */
-}
-
-.nav-links a {
-  display: block;
-  padding: 8px 12px;
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* PUSH DOWN CONTENT TO AVOID NAVBAR OVERLAP */
-body > section:first-of-type {
-  padding-top: 80px; /* adjust to match navbar height */
-}
-
 /* MOBILE SPECIFIC */
 @media (max-width: 700px) {
-  nav {
-    padding: 10px 16px;
-  }
-
   .nav-links {
-    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;   /* allow wrapping if needed */
+    gap: 12px;         /* tighter spacing for mobile */
   }
 
   .nav-links a {
     font-size: 1rem;
     padding: 6px 8px;
+  }
+
+  /* push down content more if navbar wraps to two lines */
+  body > section:first-of-type {
+    padding-top: 100px;
+  }
+
+  .hero-container {
+    padding: 2rem 16px;
+  }
+
+  .hero-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-hero .tagline {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 40px 16px;
   }
 }
