@@ -4,7 +4,7 @@ body {
   margin: 0;
   line-height: 1.6;
   color: #222;
-  text-align: center; /* center everything by default */
+  /* removed global text-align: center; */
 }
 
 a {
@@ -13,7 +13,7 @@ a {
 
 /* NAV BAR */
 nav {
-  position: sticky; /* sticky at top */
+  position: sticky;
   top: 0;
   background-color: #111;
   padding: 16px 32px;
@@ -40,16 +40,16 @@ nav {
   text-decoration: underline;
 }
 
-/* HERO / HOME */
+/* HERO / HOME ONLY */
 .hero-container {
   max-width: 700px;
   margin: 0 auto;
   padding: 4rem 2rem;
-  text-align: center; /* ensures text is centered under image */
+  text-align: center; /* only the hero section is centered */
 }
 
 .hero-image {
-  margin-bottom: 2rem; /* space between image and text */
+  margin-bottom: 2rem;
 }
 
 .hero-image img {
@@ -63,7 +63,7 @@ nav {
 .hero-text {
   display: flex;
   flex-direction: column;
-  align-items: center; /* center all text and buttons */
+  align-items: center; /* centers text and buttons only in hero */
 }
 
 .hero-text h1 {
@@ -91,9 +91,9 @@ nav {
 
 .hero-links {
   display: flex;
-  justify-content: center; /* center buttons */
-  flex-wrap: wrap; /* wrap buttons on small screens */
-  gap: 0.5rem; /* space between buttons */
+  justify-content: center; /* center buttons only in hero */
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .hero-links .button-link {
@@ -112,11 +112,12 @@ nav {
   color: #fff;
 }
 
-/* SECTIONS */
+/* SECTIONS (About, Projects, etc.) */
 section {
   padding: 64px 32px;
   max-width: 900px;
   margin: auto;
+  text-align: left; /* ensures normal text alignment for other pages */
 }
 
 h2 {
@@ -128,7 +129,7 @@ h2 {
 .project {
   margin-bottom: 24px;
   padding: 16px;
-  border-left: 4px solid #ff6600; /* accent color */
+  border-left: 4px solid #ff6600;
   background-color: #fff;
   box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
 }
@@ -175,4 +176,3 @@ button:hover {
     font-size: 1.2rem;
   }
 }
-
