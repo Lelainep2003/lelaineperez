@@ -22,18 +22,20 @@ nav {
 
 .nav-links {
   display: flex;
-  justify-content: center; /* center links on desktop */
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;             /* allow wrap if needed on smaller screens */
-  gap: 16px;                   /* spacing between links */
-  max-width: 900px;            /* constrain navbar width */
-  margin: 0 auto;              /* center the navbar block */
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 900px;
+  width: fit-content;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
 }
 
 .nav-links li {
-  text-align: none;
+  text-align: center;
+  flex: 0 0 auto;
 }
 
 .nav-links a {
