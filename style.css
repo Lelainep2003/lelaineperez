@@ -253,15 +253,8 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* MOBILE ADJUSTMENTS */
-@media (max-width: 600px) {
-  .contact-links {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-}
 
-/* RESPONSIVE */
+/* MOBILE ADJUSTMENTS */
 @media (max-width: 700px) {
   .hero-container {
     padding: 2rem 16px;
@@ -291,15 +284,23 @@ button:hover {
   .about-hero .tagline {
     font-size: 0.95rem;
   }
-}
-
-@media (max-width: 600px) {
-  .nav-links {
-    flex-direction: column;
-    text-align: center;
-  }
 
   section {
     padding: 40px 16px;
+  }
+}
+
+/* NAVBAR STAYS HORIZONTAL ON MOBILE */
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: row; /* force horizontal */
+    justify-content: center; /* still centered */
+    flex-wrap: wrap; /* allow wrapping if needed */
+    text-align: center;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }
