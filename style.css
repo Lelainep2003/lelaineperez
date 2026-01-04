@@ -207,6 +207,60 @@ button:hover {
   background-color: #e65500;
 }
 
+/* CONTACT SECTION */
+.contact-section {
+  padding: 64px 32px;
+  max-width: 700px;
+  margin: auto;
+  text-align: center; /* center all content in contact */
+  background-color: #f9f9f9; /* subtle background to highlight section */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #ff6600;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.contact-button:hover {
+  background-color: #e65500;
+  transform: translateY(-2px);
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 600px) {
+  .contact-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
 /* RESPONSIVE */
 @media (max-width: 700px) {
   .hero-container {
